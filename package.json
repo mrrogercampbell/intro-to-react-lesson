@@ -1,0 +1,12 @@
+{
+  "name": "intro-to-react-lesson",
+  "version": "1.0.0",
+  "description": "Outline: - Dev Tools:   - Git Bash   - npx   - VS Code Extensions - npx create-react-app - Function Components - Class Components - Rendering Components   - The two different ways to return a component and why they work:     1. `()`     2. ` { return <div></div> }` - Props   - Deconstructing props - State - React Hooks - Baseline - Working with data in a class component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
