@@ -1,21 +1,3 @@
-Outline:
-- Dev Tools:
-  - Git Bash
-  - npx
-  - VS Code Extensions
-- npx create-react-app
-- Function Components
-- Class Components
-- Rendering Components
-  - The two different ways to return a component and why they work:
-    1. `()`
-    2. ` { return <div></div> }`
-- Props
-  - Deconstructing props
-- State
-- React Hooks - Baseline
-- Working with data in a class component
-
 - [Dev Tools:](#dev-tools)
   - [Git Bash on Windows](#git-bash-on-windows)
     - [How to Run Git Bash on Windows](#how-to-run-git-bash-on-windows)
@@ -24,8 +6,10 @@ Outline:
   - [Create React App](#create-react-app)
 - [Props and State](#props-and-state)
   - [Props](#props)
-  - [Rendering Props: I Do](#rendering-props-i-do)
-    - [Deconstructing Props](#deconstructing-props)
+    - [`Class` Component Rendering Props](#class-component-rendering-props)
+      - [Deconstructing Props](#deconstructing-props)
+    - [`Function` Component Rendering Props](#function-component-rendering-props)
+      - [Deconstructing Props](#deconstructing-props-1)
   - [State](#state)
     - [Rendering State: I Do](#rendering-state-i-do)
     - [Deconstructing State](#deconstructing-state)
@@ -68,8 +52,8 @@ Now that we are all set with `Git` lets be sure we all have some helpful `VS Cod
 ### Create React App
 `Create React App` is a standalone tool that generates and runs a new `React` project utilizing `npm` or `yarn` with just a couple of commands.
 
-Having trouble remembering how to use `create-react-app`? 
-Also a quick overview can be found below:
+Having trouble remembering how to use `create-react-app`?
+Heres a quick guide to creating a new `React` project:
 1. Open your terminal
 2. Transverse to the directory you would like to create your `React` project inside of.
    - ie: `cd ~/code-differently/projects/`
@@ -81,12 +65,7 @@ Once `create-react-app` finishes its work you will need to `cd` into the project
 Still a little hazy on what exactly `Create React App` is doing? Check out this awesome [article](https://www.sitepoint.com/create-react-app/) which breaks it all down step by step and gives you a peak under the hood.
 
 ## Props and State
-<Need a section intro!!>
-
-**Key Takeaways**:
-- React is a front end library
-- It allows developers to rapidly build front end web applications
-- React alleviates the heavy lifting a developers has to do when working with Vanilla JavaScript, HTML, and CSS.
+`Props` and `State` are what allow you to display and store data within a `React` application. `Props` are a `immutable` data object which can be rendered by components. Whereas `State` stores data about a component that can be changed by things such as user events, data subscriptions, and more.
 
 ### Props
 **Key Takeaways**:
@@ -95,13 +74,74 @@ Still a little hazy on what exactly `Create React App` is doing? Check out this 
 - `Props` are `immutable`, meaning their value can not be changed
 - `Props` are passed into a component by its `parent` component
 
-### Rendering Props: I Do
-Demonstrate to students how to write a `Functional` and `Class` component which both render `props`.
+#### `Class` Component Rendering Props
+```jsx
+// App.js
+import React, { Component } from 'react';
 
-Example:
-```JSX
+class Greeting extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am {this.props.name}.... I am {this.props.name}!</h1>
+      </div>
+    );
+  }
+}
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Greeting name={"Groot"} />
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+##### Deconstructing Props
+Rather than working with the `props` variable you can deconstruct your `props` right before your class returns its `JSX`.
+
+```jsx
+// App.js
+import React, { Component } from 'react';
+
+class Greeting extends Component {
+  render() {
+    let { name } = this.props
+    return (
+      <div>
+        <h1>I am {name}.... I am {name}!</h1>
+      </div>
+    );
+  }
+}
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Greeting name={"Groot"} />
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+You might also notice that in the above example we no longer declare a `constructor`. In reality when your code complies `React` does utilize the `constructor` but it is an explicit action so we do not need to write it. We would need a `constructor` if we were going to store the `props` in state. Which we will look at in a bit.
+
+#### `Function` Component Rendering Props
+```jsx
+// App.js
 import React from "react";
-import "./styles.css";
 
 const Greeting = props => {
   return (
@@ -123,7 +163,7 @@ const App = props => {
 
 export default App;
 ```
-#### Deconstructing Props
+##### Deconstructing Props
 Rather than working with the `props` variable you can deconstruct all of your `props` right in your functions initial declaration
 
 ```jsx
@@ -159,9 +199,10 @@ Build a `Class` component that renders `state`.
 
 Example:
 ```jsx
-import React from "react"
+// App.js
+import React, { Component } from 'react'
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -247,7 +288,7 @@ export default App;
 You can make your code more concise by doing the following:
 ```jsx
 // App.js
-import React from "react";
+import React, { Component } from 'react';
 
 const CourseDetails = ({ name, courseName }) => (
   <div>
@@ -256,7 +297,7 @@ const CourseDetails = ({ name, courseName }) => (
   </div>
 )
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
