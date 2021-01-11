@@ -1,6 +1,12 @@
-- [Create React App](#create-react-app)
-- [Props and State](#props-and-state)
-  - [Props](#props)
+# Learning React: Props, State, and Hooks
+In this lesson we will walk-through how to instantiate and utilize React `Props`, `State`, and `Hooks`
+
+### Table of Content
+- [Learning React: Props, State, and Hooks](#learning-react-props-state-and-hooks)
+    - [Table of Content](#table-of-content)
+  - [Create React App](#create-react-app)
+  - [Props and State](#props-and-state)
+    - [Props](#props)
     - [Prompt 1: Create a React Project](#prompt-1-create-a-react-project)
     - [`Class` Component Rendering Props](#class-component-rendering-props)
     - [Deconstructing Props in a Class Component](#deconstructing-props-in-a-class-component)
@@ -16,7 +22,7 @@
   - [React Hooks Basics](#react-hooks-basics)
     - [Prompt 4: React Hook Basics](#prompt-4-react-hook-basics)
 
-# Create React App
+## Create React App
 `Create React App` is a standalone tool that generates and runs a new `React` project utilizing `npm` or `yarn` with just a couple of commands.
 
 Having trouble remembering how to use `create-react-app`?
@@ -31,10 +37,10 @@ Once `create-react-app` finishes its work you will need to `cd` into the project
 
 Still a little hazy on what exactly `Create React App` is doing? Check out this awesome [article](https://www.sitepoint.com/create-react-app/) which breaks it all down step by step and gives you a peak under the hood.
 
-# Props and State
+## Props and State
 `Props` and `State` are what allow you to display and store data within a `React` application. `Props` are a `immutable` data object which can be rendered by components. Whereas `State` stores data about a component that can be changed by things such as user events, data subscriptions, and more.
 
-## Props
+### Props
 **Key Takeaways**:
 - `Props` is short for `properties`
 - `Props` are variables which store data
