@@ -4,6 +4,7 @@ In this lesson we will walk-through how to instantiate and utilize React `Props`
 ### Table of Content
 - [Learning React: Props, State, and Hooks](#learning-react-props-state-and-hooks)
     - [Table of Content](#table-of-content)
+  - [Setting Up Your Dev Environment](#setting-up-your-dev-environment)
   - [Create React App](#create-react-app)
   - [Props and State](#props-and-state)
     - [Props](#props)
@@ -21,6 +22,9 @@ In this lesson we will walk-through how to instantiate and utilize React `Props`
     - [Prompt 3: Working with State](#prompt-3-working-with-state)
   - [React Hooks Basics](#react-hooks-basics)
     - [Prompt 4: React Hook Basics](#prompt-4-react-hook-basics)
+
+## Setting Up Your Dev Environment
+Need help setting up your Dev Environment? Checkout these helpful [hints and tricks](DevTools.md)!
 
 ## Create React App
 `Create React App` is a standalone tool that generates and runs a new `React` project utilizing `npm` or `yarn` with just a couple of commands.
