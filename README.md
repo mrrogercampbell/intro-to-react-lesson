@@ -11,7 +11,9 @@
     - [Deconstructing State](#deconstructing-state)
     - [Passing State and Rendering it as Props](#passing-state-and-rendering-it-as-props)
     - [Passing State: Syntax Sugar](#passing-state-syntax-sugar)
+    - [Prompt 3: Working with State](#prompt-3-working-with-state)
   - [React Hooks Basics](#react-hooks-basics)
+    - [Prompt 3: Working with State](#prompt-3-working-with-state-1)
 
 # Create React App
 `Create React App` is a standalone tool that generates and runs a new `React` project utilizing `npm` or `yarn` with just a couple of commands.
@@ -152,9 +154,10 @@ export default App;
 ```
 
 ### Prompt 2: Working with Props
-In the `React` project you create in `Prompt 1`, please fullfil the requirements below:
-- Create a components directory
-- Inside the components directory create two `Class` components:
+In the `React` project you created in `Prompt 1`, please fullfil the requirements below:
+- Create a directory named `components`
+- Inside the components directory create another directory called Prompt 2
+- Inside of the Prompt 2 directory create two `Class` components:
   1. SongData
   2. SingThatSing
 - In the `SongData` component declare the three following variables:
@@ -173,10 +176,11 @@ In the `React` project you create in `Prompt 1`, please fullfil the requirements
 ```
 - Render the `SingThatSong` component inside the `SongData` component
 - Pass all three variables (`title`, `lyrics`, `artist`) as separate props to the `SingThatSong` component
-- Inside the `SingThatSong` component deconstruct the props and render each in the following way:
+- Inside the `SingThatSong` component deconstruct the props **and** render each in the following way:
   - Display the song `title` in a h1 tag
   - Display the `artist` in a h2 tag
   - Display the `lyrics` in a p tag
+- Render the `SongData` component inside of the `App` Component
 
 
 ## State
@@ -308,8 +312,36 @@ class App extends Component {
 }
 export default App;
 ```
-
 Rather than declaring each property within `state` that we want to pass down, we are able to use the `spread` operator and pass down all of the data within our `state` object at once and our child component is able to still deconstruct the data at put it to use.
+
+### Prompt 3: Working with State
+In the `React` project you created in `Prompt 1`, please fullfil the requirements below:
+- Inside the `components` directory create another directory called Prompt 3
+- Inside of the Prompt 3 directory create two `Class` components:
+  1. Station
+  2. ShipInfo
+- In the `Station` component instantiate `state` and declare three properties with the following data:
+```jsx
+  shipName = "The Rocinante",
+  currentStation = "Tyco Station",
+  crewMembers = [
+      'Captain James Holden',
+      'Executive Officer Naomi Nagata',
+      'Pilot Alex Kamal',
+      'Chief Engineer Amos Burton'
+  ]
+```
+- Deconstruct all three properties from within the `Station` component's `state`
+- Inside the `Station` component display the follow statement in a `h1` and be sure to pass in the corresponding data from `state`:
+  - `Here is the Crew Manifest for the <Ship Name Goes Here>`
+- Render the `ShipInfo` component inside the `Station` component below the `h1` tag you just created
+- Pass the two remaining properties (`currentStation`, and `crewMember`) as separate props to the `ShipInfo` component
+- Inside the `ShipInfo` component deconstruct the props **and** render each in the following way:
+  - Iterate over the `crewMember` prop and render a `li` for each member of the Roci's crew
+  - Display the follow statement in a `h3` and be sure to pass in the corresponding data from `props`:
+  - `Currently taking on repairs at: <Current Station Goes Here>`
+- Render the `Station` component inside of the `App` Component
+
 
 ## React Hooks Basics
 React Hooks allow us to instantiate `state` react in `Function` component.
@@ -362,3 +394,31 @@ export default App
     2. A `function` which allows you to update the `Current State`
 
 For now we are only going to focus on utilizing the `Current State`.
+
+### Prompt 3: Working with State
+In the `React` project you created in `Prompt 1`, please fullfil the requirements below:
+- Inside the `components` directory create another directory called Prompt 3
+- Inside of the Prompt 3 directory create two `Class` components:
+  1. Station
+  2. ShipInfo
+- In the `Station` component instantiate `state` and declare three properties with the following data:
+```jsx
+  shipName = "The Rocinante",
+  currentStation = "Tyco Station",
+  crewMembers = [
+      'Captain James Holden',
+      'Executive Officer Naomi Nagata',
+      'Pilot Alex Kamal',
+      'Chief Engineer Amos Burton'
+  ]
+```
+- Deconstruct all three properties from within the `Station` component's `state`
+- Inside the `Station` component display the follow statement in a `h1` and be sure to pass in the corresponding data from `state`:
+  - `Here is the Crew Manifest for the <Ship Name Goes Here>`
+- Render the `ShipInfo` component inside the `Station` component below the `h1` tag you just created
+- Pass the two remaining properties (`currentStation`, and `crewMember`) as separate props to the `ShipInfo` component
+- Inside the `ShipInfo` component deconstruct the props **and** render each in the following way:
+  - Iterate over the `crewMember` prop and render a `li` for each member of the Roci's crew
+  - Display the follow statement in a `h3` and be sure to pass in the corresponding data from `props`:
+  - `Currently taking on repairs at: <Current Station Goes Here>`
+- Render the `Station` component inside of the `App` Component
