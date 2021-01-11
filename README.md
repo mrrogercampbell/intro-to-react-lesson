@@ -2,13 +2,14 @@
 - [Props and State](#props-and-state)
   - [Props](#props)
     - [`Class` Component Rendering Props](#class-component-rendering-props)
-    - [Deconstructing Props](#deconstructing-props)
+    - [Deconstructing Props in a Class Component](#deconstructing-props-in-a-class-component)
     - [`Function` Component Rendering Props](#function-component-rendering-props)
-    - [Deconstructing Props](#deconstructing-props-1)
+    - [Deconstructing Props in a Function Component](#deconstructing-props-in-a-function-component)
+    - [Prompt 2: Working with Props](#prompt-2-working-with-props)
   - [State](#state)
-    - [Rendering State: I Do](#rendering-state-i-do)
+    - [Rendering State](#rendering-state)
     - [Deconstructing State](#deconstructing-state)
-    - [Passing State and Rendering State](#passing-state-and-rendering-state)
+    - [Passing State and Rendering it as Props](#passing-state-and-rendering-it-as-props)
     - [Passing State: Syntax Sugar](#passing-state-syntax-sugar)
   - [React Hooks Basics](#react-hooks-basics)
 
@@ -68,7 +69,7 @@ class App extends Component {
 
 export default App;
 ```
-### Deconstructing Props
+### Deconstructing Props in a Class Component
 Rather than working with the `props` variable you can deconstruct your `props` right before your class returns its `JSX`.
 
 ```jsx
@@ -126,7 +127,7 @@ const App = props => {
 
 export default App;
 ```
-### Deconstructing Props
+### Deconstructing Props in a Function Component
 Rather than working with the `props` variable you can deconstruct all of your `props` right in your functions initial declaration
 
 ```jsx
@@ -150,6 +151,34 @@ function App() {
 export default App;
 ```
 
+### Prompt 2: Working with Props
+In the `React` project you create in `Prompt 1`, please fullfil the requirements below:
+- Create a components directory
+- Inside the components directory create two `Class` components:
+  1. SongData
+  2. SingThatSing
+- In the `SongData` component declare the three following variables:
+```jsx
+        let title = 'September'
+        let lyrics = `Do you remember, 21st night of September?
+        Love was changing the mind of pretenders
+        While chasing the clouds away
+        Our hearts were ringing
+        In the key that our souls were singing
+        As we danced in the night
+        Remember
+        How the stars stole the night away, oh yeah
+`
+        let artist = 'Earth Wind and Fire'
+```
+- Render the `SingThatSong` component inside the `SongData` component
+- Pass all three variables (`title`, `lyrics`, `artist`) as separate props to the `SingThatSong` component
+- Inside the `SingThatSong` component deconstruct the props and render each in the following way:
+  - Display the song `title` in a h1 tag
+  - Display the `artist` in a h2 tag
+  - Display the `lyrics` in a p tag
+
+
 ## State
 Key Takeaways:
 - `State` is a JavaScript object which is defined in the constructor of a `Class` component
@@ -157,7 +186,7 @@ Key Takeaways:
 - You define properties within `state` which in turn can be accessed and rendered within a component
 - A parent component can pass it's own `state` to a child component in the form `props`
 
-### Rendering State: I Do
+### Rendering State
 Build a `Class` component that renders `state`.
 
 Example:
@@ -214,7 +243,7 @@ class App extends React.Component {
 export default App
 ```
 
-### Passing State and Rendering State
+### Passing State and Rendering it as Props
 Same as we were able to pass static data from a parent component to a child we can pass a parent component's state to its child.
 ```jsx
 // App.js
