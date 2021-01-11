@@ -1,55 +1,18 @@
-- [Dev Tools:](#dev-tools)
-  - [Git Bash on Windows](#git-bash-on-windows)
-    - [How to Run Git Bash on Windows](#how-to-run-git-bash-on-windows)
-    - [Git Installation Help](#git-installation-help)
-  - [VS Code Extensions](#vs-code-extensions)
-  - [Create React App](#create-react-app)
+- [Create React App](#create-react-app)
 - [Props and State](#props-and-state)
   - [Props](#props)
     - [`Class` Component Rendering Props](#class-component-rendering-props)
-      - [Deconstructing Props](#deconstructing-props)
+    - [Deconstructing Props](#deconstructing-props)
     - [`Function` Component Rendering Props](#function-component-rendering-props)
-      - [Deconstructing Props](#deconstructing-props-1)
+    - [Deconstructing Props](#deconstructing-props-1)
   - [State](#state)
     - [Rendering State: I Do](#rendering-state-i-do)
     - [Deconstructing State](#deconstructing-state)
-  - [Passing State and Rendering State: I Do](#passing-state-and-rendering-state-i-do)
+    - [Passing State and Rendering State](#passing-state-and-rendering-state)
     - [Passing State: Syntax Sugar](#passing-state-syntax-sugar)
   - [React Hooks Basics](#react-hooks-basics)
 
-## Dev Tools:
-### Git Bash on Windows
-"Git Bash is an application for Microsoft Windows environments which provides an emulation layer for a Git command line experience." - Atlassian.com
-
-In laymen terms `Git Bash` is a terminal application that Windows users can utilize in place of the `Command Prompt` terminal that comes as default with all Windows OS. `Git Bash` in turn allows you to use `Git` command in the terminal.
-
-Utilizing `Git Bash` is very helpful when you are working with `React` and other frameworks that run hefty size servers in local development.
-
-Moral of the story: Utilize `Git Bash` to run your `React` server instead of the build in terminal in your text editor.
-
-#### How to Run Git Bash on Windows
-1. Press the Windows button on your keyboard
-2. Type `Git Bash`
-3. Select the program
-
-#### Git Installation Help
-In order to use `Git Bash` you must have `Git` installed on your machine. If for some reason you do not have `Git` and or `Git Bash` installed please follow the tutorial below for your OS.
-
-- **Windows** [tutorial](https://www.atlassian.com/git/tutorials/install-git#windows)
-  - If you are having trouble with the Windows `Git Bash` installation here is a [tutorial](https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/#launching-git-bash) with screenshots. Start with the link above though.
-- **Mac** [tutorial](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
-- **Linux** [tutorial](https://www.atlassian.com/git/tutorials/install-git#linux)
-
-### VS Code Extensions
-Now that we are all set with `Git` lets be sure we all have some helpful `VS Code` extensions installed.
-
-- [Reactjs Code Snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets): contains helpful code snippets for React.
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): is a code formatter which helps to keep your code clean and easy to read.
-- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync): this is an awesome extension that allows you to sync your `VS Code` setting to a GitHub Gist. This is super helpful for users who have multiple computers or anyone who would like to back up their `VS Code` settings.
-- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker): Does exactly what the name says. It is a spell checker for your text editor. Just download it.. Its a life saver.
-- [VS Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks): Where as this is not a `VS Code` extension this is a very helpful guide on tips and tricks that Visual Studio Code has put out for `VS Code`. I would highly recommend give it a read, as a Engineer shortcuts and hotkeys are your best friend.
-
-### Create React App
+# Create React App
 `Create React App` is a standalone tool that generates and runs a new `React` project utilizing `npm` or `yarn` with just a couple of commands.
 
 Having trouble remembering how to use `create-react-app`?
@@ -64,17 +27,17 @@ Once `create-react-app` finishes its work you will need to `cd` into the project
 
 Still a little hazy on what exactly `Create React App` is doing? Check out this awesome [article](https://www.sitepoint.com/create-react-app/) which breaks it all down step by step and gives you a peak under the hood.
 
-## Props and State
+# Props and State
 `Props` and `State` are what allow you to display and store data within a `React` application. `Props` are a `immutable` data object which can be rendered by components. Whereas `State` stores data about a component that can be changed by things such as user events, data subscriptions, and more.
 
-### Props
+## Props
 **Key Takeaways**:
 - `Props` is short for `properties`
 - `Props` are variables which store data
 - `Props` are `immutable`, meaning their value can not be changed
 - `Props` are passed into a component by its `parent` component
 
-#### `Class` Component Rendering Props
+### `Class` Component Rendering Props
 ```jsx
 // App.js
 import React, { Component } from 'react';
@@ -105,7 +68,7 @@ class App extends Component {
 
 export default App;
 ```
-##### Deconstructing Props
+### Deconstructing Props
 Rather than working with the `props` variable you can deconstruct your `props` right before your class returns its `JSX`.
 
 ```jsx
@@ -138,7 +101,7 @@ export default App;
 ```
 You might also notice that in the above example we no longer declare a `constructor`. In reality when your code complies `React` does utilize the `constructor` but it is an explicit action so we do not need to write it. We would need a `constructor` if we were going to store the `props` in state. Which we will look at in a bit.
 
-#### `Function` Component Rendering Props
+### `Function` Component Rendering Props
 ```jsx
 // App.js
 import React from "react";
@@ -163,7 +126,7 @@ const App = props => {
 
 export default App;
 ```
-##### Deconstructing Props
+### Deconstructing Props
 Rather than working with the `props` variable you can deconstruct all of your `props` right in your functions initial declaration
 
 ```jsx
@@ -187,14 +150,14 @@ function App() {
 export default App;
 ```
 
-### State
+## State
 Key Takeaways:
 - `State` is a JavaScript object which is defined in the constructor of a `Class` component
 - `State`is meant to hold data for a component
 - You define properties within `state` which in turn can be accessed and rendered within a component
 - A parent component can pass it's own `state` to a child component in the form `props`
 
-#### Rendering State: I Do
+### Rendering State: I Do
 Build a `Class` component that renders `state`.
 
 Example:
@@ -223,7 +186,7 @@ class App extends Component {
 export default App
 ```
 
-#### Deconstructing State
+### Deconstructing State
 Similar to how we were able to deconstruct our `props` we can deconstruct our `state` and make our code more concise.
 ```jsx
 // App.js
@@ -251,7 +214,7 @@ class App extends React.Component {
 export default App
 ```
 
-### Passing State and Rendering State: I Do
+### Passing State and Rendering State
 Same as we were able to pass static data from a parent component to a child we can pass a parent component's state to its child.
 ```jsx
 // App.js
@@ -284,7 +247,7 @@ class App extends React.Component {
 }
 export default App;
 ```
-#### Passing State: Syntax Sugar
+### Passing State: Syntax Sugar
 You can make your code more concise by doing the following:
 ```jsx
 // App.js
@@ -319,7 +282,7 @@ export default App;
 
 Rather than declaring each property within `state` that we want to pass down, we are able to use the `spread` operator and pass down all of the data within our `state` object at once and our child component is able to still deconstruct the data at put it to use.
 
-### React Hooks Basics
+## React Hooks Basics
 React Hooks allow us to instantiate `state` react in `Function` component.
 
 Lets start by creating a `Class` component which displays some data that is stored in its `state`
